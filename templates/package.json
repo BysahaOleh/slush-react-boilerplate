@@ -1,0 +1,19 @@
+{
+  "name": "<%= appName %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "main": "index.js",
+  "scripts": {
+    "test": "sdgfsdfg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sdfgsdf"
+  },
+  "keywords": [
+    "sdgsdf"
+  ],
+  "author": "<%= authorName %> <<%= authorEmail %>>",
+  "license": "MIT",
+  "devDependencies": {}
+}
