@@ -1,6 +1,5 @@
 const constants = require('../../constants');
 
-
 module.exports = function(dependencies, answers) {
   if(answers.styleGuideTools === constants.styleGuide.eslint) {
     dependencies['eslint'] = '^4.12.1';

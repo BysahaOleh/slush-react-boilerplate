@@ -1,0 +1,8 @@
+module.exports = function(answers) {
+  if(answers.reactRouter) {
+
+    return ('import React from \'react\'\nimport {\n  BrowserRouter as Router,\n  Route,\n  Link\n} from \'react-router-dom\'\n\nconst Home = () => (\n  <div>\n    <h2>Home</h2>\n  </div>\n)\n\nconst About = () => (\n  <div>\n    <h2>About</h2>\n  </div>\n)\n\nconst Topic = ({ match }) => (\n  <div>\n    <h3>{match.params.topicId}</h3>\n  </div>\n)\n\nconst Topics = ({ match }) => (\n  <div>\n    <h2>Topics</h2>\n    <ul>\n      <li>\n        <Link to={match.url + \'rendering\'}>\n          Rendering with React\n        </Link>\n      </li>\n      <li>\n        <Link to={match.url + \'/components\'}>\n          Components\n        </Link>\n      </li>\n      <li>\n        <Link to={match.url + \'/props-v-state\'}>\n          Props v. State\n        </Link>\n      </li>\n    </ul>\n\n    <Route path={match.url + \'/:topicId\'} component={Topic}/>\n    <Route exact path={match.url} render={() => (\n      <h3>Please select a topic.</h3>\n    )}/>\n  </div>\n)\n\nconst App = () => (\n  <Router>\n    <div>\n      <ul>\n        <li><Link to="/">Home</Link></li>\n        <li><Link to="/about">About</Link></li>\n        <li><Link to="/topics">Topics</Link></li>\n      </ul>\n\n      <hr/>\n\n      <Route exact path="/" component={Home}/>\n      <Route path="/about" component={About}/>\n      <Route path="/topics" component={Topics}/>\n    </div>\n  </Router>\n)\n\nexport default App')
+  } else {
+    return 'import React, {Component, PropTypes} from \'react\'\n\nclass App extends Component {\n    render() {\n        return (\n            <div>App</div>\n        )\n    }\n}\n\nexport default App'
+  }
+};

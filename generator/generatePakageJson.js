@@ -32,7 +32,31 @@ module.exports = function generatePackageJSON(answers) {
 
   switch(answers.styleGuideTools) {
     case constants.styleGuide.eslint:
-      packages.scripts['test'] = './node_modules/.bin/eslint .'
+      packages.scripts['eslint'] = './node_modules/.bin/eslint .'
+  }
+
+  switch(answers.testingTools) {
+    case constants.testingTool.jest:
+      packages.scripts['test'] = './node_modules/.bin/jest';
+      packages.jest = {
+        transform: {
+          "^.+\\.(js|jsx)$": "babel-jest",
+          "^.+\\.css$": "custom-transformer",
+          "^.+\\.tsx?$": "ts-jest"
+        },
+        collectCoverageFrom: [
+          "**/*.{js,jsx}",
+          "!**/node_modules/**",
+          "!**/vendor/**"
+        ],
+        moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json"],
+        testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        moduleNameMapper: {
+          "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+            "<rootDir>/__mocks__/fileMock.js",
+          "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+        }
+      }
   }
 
   return JSON.stringify(packages, null, 2);

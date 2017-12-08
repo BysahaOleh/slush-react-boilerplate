@@ -52,5 +52,10 @@ module.exports = {
   testingTool: {
     jest: 'Jest',
     karma: 'Karma + Instambul'
+  },
+  styles: {
+    less: 'scss',
+    stylus: 'stylus',
+    scss: 'scss'
   }
 };

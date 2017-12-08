@@ -6,6 +6,7 @@ const getReducers = require('./generateReducer');
 const getMiddleware = require('./generateMiddleware');
 const getStore = require('./generateStore');
 const getIndex = require('./generateIndex');
+const getApp = require('./generateApp');
 
 module.exports = function(answers) {
   return {
@@ -13,9 +14,10 @@ module.exports = function(answers) {
     presets: getPresets(answers),
     webpackConfig: getWebpackConfig(answers),
     eslintConfig: getESLintConfig(answers),
-    reducers: getReducers(answers),
+    reducer: getReducers(answers),
     middleware: getMiddleware(answers),
     store: getStore(answers),
-    index: getIndex(answers)
+    index: getIndex(answers),
+    app: getApp(answers)
   };
 };

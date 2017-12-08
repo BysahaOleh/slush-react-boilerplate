@@ -68,6 +68,41 @@ function getModules(answers) {
       { test: /\\.(ts|tsx)?$/, loader: 'ts-loader' }`)
   }
 
+  if(answers.style === constants.styles.less) {
+    modules.push(`
+      {
+        test: /\\.less$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "less-loader"
+        }]
+      }`)
+  }
+
+  if(answers.style === constants.styles.stylus) {
+    modules.push(`
+      { test: /\\.styl$/, loader: 'style-loader!css-loader!stylus-loader' }`)
+  }
+
+  if(answers.style === constants.styles.scss) {
+    modules.push(`
+      {
+        test: /\\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "resolve-url-loader"
+        }, {
+          loader: "sass-loader"
+        }]
+      }
+    `)
+  }
 
   return `
   module: {

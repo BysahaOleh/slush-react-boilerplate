@@ -30,6 +30,10 @@ module.exports = function(answers) {
     ignoreFiles.push('src/sagas', 'src/middleware/saga.*')
   }
 
+  if(answers.testingTool === 'Not') {
+    ignoreFiles.push('src/test.spec.js')
+  }
+
   return ignoreFiles.map(function(file) {
     return baseDir + file
   })
