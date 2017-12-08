@@ -41,6 +41,21 @@ module.exports = [
     }
   },
   {
+    type: 'checkbox',
+    choices: [
+      {
+        name: constants.babelPlugins.asyncGenerators
+      }, {
+        name: constants.babelPlugins.regeneratorTransform
+      }
+    ],
+    name: 'babelPlugins',
+    message: 'Select Babel plugins',
+    when: function(answers) {
+      return answers.lang === constants.lang.babel
+    }
+  },
+  {
     type: 'list',
     name: 'jsFramework',
     message: 'Select JS Framework',

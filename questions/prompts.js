@@ -12,4 +12,4 @@ const confirm = [
   }
 ];
 
-module.exports = [].concat(main, webpack, core, confirm);
+module.exports = [].concat(main, webpack, core, architecture, styleGuide, confirm);

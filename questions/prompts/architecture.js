@@ -11,7 +11,10 @@ module.exports = [
       constants.architecture.redux,
       constants.architecture.reactApollo,
       'Not'
-    ]
+    ],
+    when: function(answers) {
+      return answers.lang !== constants.lang.es5
+    }
   },
   {
     type: 'checkbox',
@@ -20,7 +23,9 @@ module.exports = [
         name: constants.reduxTools.form
       }, {
         name: constants.reduxTools.saga
-      }, {
+      },
+      new inquirer.Separator('!!!Redux saga use babel plugin ' + constants.babelPlugins.regeneratorTransform ),
+      {
         name: constants.reduxTools.thunk
       }, {
         name: constants.reduxTools.localstorage
@@ -33,7 +38,7 @@ module.exports = [
     name: 'reduxTools',
     message: 'Select Redux tools',
     when: function(answers) {
-      return answers.architecture === constants.architecture.redux
+      return answers.architecture === constants.architecture.redux && answers.lang !== constants.lang.es5
     }
   },
   {
@@ -42,11 +47,11 @@ module.exports = [
     message: 'Select localization library:',
     choices: [
       constants.reactLocalization.intl,
-      constants.reactLocalization.i18n,
+      //constants.reactLocalization.i18n,
       'Not'
     ],
     when: function(answers) {
-      return answers.jsFramework === constants.jsFrameworks.react
+      return answers.jsFramework === constants.jsFrameworks.react && answers.lang !== constants.lang.es5
     }
   }
 ];

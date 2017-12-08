@@ -12,6 +12,10 @@ module.exports = {
     stage1: 'stage-1',
     stage0: 'stage-0'
   },
+  babelPlugins: {
+    asyncGenerators: 'syntax-async-generators',
+    regeneratorTransform: 'transform-regenerator'
+  },
   jsFrameworks: {
     react: 'React'
   },
@@ -42,8 +46,8 @@ module.exports = {
     eslint: 'ESLint'
   },
   styleGuideEslint: {
-    airbnbReact: 'React Airbnb',
-    airbnbJS: 'JS Airbnb'
+    airbnbReact: 'React',
+    airbnbJS: 'Standard'
   },
   testingTool: {
     jest: 'Jest',
