@@ -34,6 +34,7 @@ module.exports = function(answers) {
     ignoreFiles.push('src/test.spec.js')
   }
 
+
   return ignoreFiles.map(function(file) {
     return baseDir + file
   })

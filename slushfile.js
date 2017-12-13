@@ -28,7 +28,7 @@ gulp.task('default', function (done) {
     .prompt(prompts)
     .then(function (answers) {
 
-      console.log(answers);
+      //console.log(answers);
       if (!answers.moveon) {
         return done();
       }
@@ -36,7 +36,7 @@ gulp.task('default', function (done) {
       const content = generator(answers);
       const ignoreFiles = getIgnoreFiles(answers);
 
-      console.log('----------config-----\n', content);
+      //console.log('----------config-----\n', content);
 
       //const isESlint = answers.styleGuideTools === constants.styleGuide.eslint;
 
@@ -50,12 +50,6 @@ gulp.task('default', function (done) {
         .pipe(conflict('./'))
         .pipe(gulp.dest('./'))
         .pipe(install(function() {
-          /*console.log('-----ESLint Configuration---------');
-          gulp.src(__dirname).pipe(gulpif(isESlint, shell([
-            __dirname + '/node_modules/.bin/eslint --init'
-          ]))).on('finish', function() {
-            done()
-          })*/
 
           done()
         }));

@@ -42,6 +42,13 @@ module.exports = [
     }
   },
   {
+    name: 'reactApolloUrl',
+    message: 'React Apollo url:',
+    when: function(answers) {
+      return answers.architecture === constants.architecture.reactApollo && answers.lang !== constants.lang.es5
+    }
+  },
+  {
     type: 'list',
     name: 'reactLocalization',
     message: 'Select localization library:',

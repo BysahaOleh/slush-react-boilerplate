@@ -20,9 +20,15 @@ module.exports = function(answers) {
 
   if(answers.reduxTools) {
     answers.reduxTools.map(function(tool) {
-      if(tool === constants.reduxTools.saga) {
-        imports.push('import sagaMiddleware from \'./saga\';');
-        middleware.push('sagaMiddleware')
+      switch(tool) {
+        case constants.reduxTools.saga:
+          imports.push('import sagaMiddleware from \'../sagas\';');
+          middleware.push('\t\tsagaMiddleware');
+          break;
+        case constants.reduxTools.logger:
+          imports.push('import logger from \'redux-logger\'');
+          middleware.push('\t\tlogger');
+          break;
       }
     });
   }
