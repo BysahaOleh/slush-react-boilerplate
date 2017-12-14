@@ -11,11 +11,9 @@ It is a generator for simple creation setup React projects.
 
 ### Run
 
-`
-mkdir myProject
-cd myProject
-slush slush-react-boilerplate
-`
+`mkdir myProject`
+`cd myProject`
+`slush slush-react-boilerplate`
 
 
 ### Descrption
