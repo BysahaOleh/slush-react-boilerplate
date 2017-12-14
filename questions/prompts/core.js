@@ -80,7 +80,8 @@ module.exports = [
     message: 'Do you want install addition library for ReactJS?',
     choices: [
       constants.bootstrapReact.reactstrap,
-      constants.bootstrapReact.reactBootstrap
+      constants.bootstrapReact.reactBootstrap,
+      'Not'
     ],
     when: function(answers) {
       return answers.jsFramework === constants.jsFrameworks.react &&

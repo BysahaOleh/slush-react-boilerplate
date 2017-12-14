@@ -29,6 +29,9 @@ module.exports = function(answers) {
           imports.push('import logger from \'redux-logger\'');
           middleware.push('\t\tlogger');
           break;
+        case constants.reduxTools.localstorage:
+          imports.push('import persistState from \'redux-localstorage\'');
+          middleware.push('\t\tpersistState()')
       }
     });
   }
