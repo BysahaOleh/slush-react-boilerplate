@@ -3,6 +3,22 @@ Slush React simple boilerplate generator
 
 It is a generator for simple creation setup React projects.
 
+### Install
+
+`
+[sudo] npm i -g slush slush-react-boilerplate
+`
+
+### Run
+
+`
+mkdir myProject
+cd myProject
+slush slush-react-boilerplate
+`
+
+
+### Descrption
 In the generator there is:
 
 The generator used Webpack for build project.
