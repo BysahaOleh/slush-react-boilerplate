@@ -10,7 +10,7 @@ const confirm = [
   {
     type: 'confirm',
     name: 'moveon',
-    message: 'Continue?'
+    message: 'Finish installation and create project with selected values?'
   }
 ];
 
