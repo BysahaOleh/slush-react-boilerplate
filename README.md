@@ -15,7 +15,7 @@ It is a generator for simple creation setup React projects.
 
 `cd myProject`
 
-`slush slush-react-boilerplate`
+`slush react-boilerplate`
 
 
 ### Descrption
