@@ -4,7 +4,7 @@ module.exports = function(answers) {
   let imports = [];
   let reducers = [];
 
-  if(answers.reduxTools.length) {
+  if(answers.reduxTools && answers.reduxTools.length) {
     answers.reduxTools.map(function(tool) {
       if(tool === constants.reduxTools.form) {
         imports.push('import { reducer as formReducer } from \'redux-form\';');

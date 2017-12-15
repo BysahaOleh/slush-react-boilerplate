@@ -12,9 +12,7 @@ const gulp = require('gulp'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
-    inquirer = require('inquirer'),
-    shell = require('gulp-shell'),
-    gulpif = require('gulp-if');
+    inquirer = require('inquirer');
 
 const prompts = require('./questions/prompts');
 
@@ -28,17 +26,12 @@ gulp.task('default', function (done) {
     .prompt(prompts)
     .then(function (answers) {
 
-      //console.log(answers);
       if (!answers.moveon) {
         return done();
       }
 
       const content = generator(answers);
       const ignoreFiles = getIgnoreFiles(answers);
-
-      //console.log('----------config-----\n', content);
-
-      //const isESlint = answers.styleGuideTools === constants.styleGuide.eslint;
 
       gulp.src([__dirname + '/templates/**'].concat(ignoreFiles))
         .pipe(template(content))
@@ -50,30 +43,7 @@ gulp.task('default', function (done) {
         .pipe(conflict('./'))
         .pipe(gulp.dest('./'))
         .pipe(install(function() {
-
           done()
         }));
     });
 });
-
-
-
-
-/*
-
-const download = require('download-git-repo'),
-      rimraf = require('rimraf');
-
-download('BysahaOleh/slush-react-boilerplate-source', './tmp', function (err) {
-  if(err) {
-    done()
-  }
-  gulp.src('./tmp/!**!/!**.*')
-    .pipe(gulp.dest('./temp'))
-    .on('end', function() {
-      rimraf('./tmp', function () {
-        console.log('done');
-        done();
-      });
-    });
-});*/

@@ -32,12 +32,6 @@ module.exports = [
     message: 'Select Babel presets',
     when: function(answers) {
       return answers.lang === constants.lang.babel
-    },
-    validate: function(answer) {
-      if (answer.length < 1) {
-        return 'You must choose at least one preset.';
-      }
-      return true;
     }
   },
   {
