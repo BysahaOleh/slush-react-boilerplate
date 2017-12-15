@@ -26,6 +26,7 @@
   "dependencies": {
     "download-git-repo": "^1.0.1",
     "eslint": "^4.12.1",
+    "git-origin-url": "^0.3.0",
     "gulp": "^3.6.2",
     "gulp-conflict": "^0.1.1",
     "gulp-if": "^2.0.2",
