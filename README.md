@@ -18,7 +18,7 @@ It is a generator for simple creation setup React projects.
 `slush react-boilerplate`
 
 
-### Descrption
+### Description
 In the generator there is:
 
 The generator used Webpack for build project.
