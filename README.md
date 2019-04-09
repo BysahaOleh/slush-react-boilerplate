@@ -1,3 +1,5 @@
+**DEPRECATED**
+
 # slush-react-boilerplate
 Slush React simple boilerplate generator
 
